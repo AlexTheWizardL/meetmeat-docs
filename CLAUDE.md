@@ -66,13 +66,47 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 
 ---
 
-## Repositories
+## Repositories & Git
 
-| Repo | Path | Purpose |
-|------|------|---------|
-| meetmeat-docs | `./` | Docs, designs (this repo) |
-| meetmeat-backend | `./meetmeat-backend/` | NestJS API |
-| meetmeat-frontend | `./meetmeat-frontend/` | React Native app |
+### Repo URLs
+| Repo | GitHub URL | Local Path |
+|------|------------|------------|
+| meetmeat-docs | https://github.com/AlexTheWizardL/meetmeat-docs | `./` (root) |
+| meetmeat-backend | https://github.com/AlexTheWizardL/meetmeat-backend | `./meetmeat-backend/` |
+| meetmeat-frontend | https://github.com/AlexTheWizardL/meetmeat-frontend | `./meetmeat-frontend/` |
+
+### Git Commands (Claude Reference)
+
+**Docs repo (root):**
+```bash
+cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research"
+git add . && git commit -m "message" && git push
+```
+
+**Backend repo:**
+```bash
+cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research/meetmeat-backend"
+git add . && git commit -m "message" && git push
+```
+
+**Frontend repo:**
+```bash
+cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research/meetmeat-frontend"
+git add . && git commit -m "message" && git push
+```
+
+### Initialize Backend/Frontend (First Time)
+```bash
+# Backend
+cd meetmeat-backend
+git init
+git remote add origin https://github.com/AlexTheWizardL/meetmeat-backend.git
+
+# Frontend
+cd meetmeat-frontend
+git init
+git remote add origin https://github.com/AlexTheWizardL/meetmeat-frontend.git
+```
 
 ---
 
