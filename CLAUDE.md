@@ -1,6 +1,18 @@
 # MeetMeAt - Project Instructions
 
 > This file is automatically read by Claude Code at session start.
+> **No need to paste anything** - Claude Code reads this file automatically when working in this folder.
+
+## User Context
+
+**User:** Web developer, medium React knowledge, learning React Native & mobile development.
+
+**Claude should:**
+- Explain mobile-specific concepts (build process, signing, native modules, etc.)
+- Highlight differences from web development
+- Provide context on "why" not just "how"
+- Point out critical steps that are easy to miss
+- Offer to explain any technical decisions in more detail
 
 ## Project Overview
 
