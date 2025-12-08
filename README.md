@@ -1,31 +1,44 @@
-# Mobile App Research
+# MeetMeAt - Documentation
 
-Research project comparing React Native vs Flutter for cross-platform mobile development.
+Conference poster generator app for social media.
 
-## Research Document
+## Structure
 
-**[Read the full research here](./RESEARCH.md)** - Comprehensive 2024-2025 comparison covering:
+```
+meetmeat-docs/
+├── CLAUDE.md              ← Auto-loaded by Claude Code
+├── PROJECT_NOTES.md       ← Tech stack, decisions, progress
+├── UX_UI_APPROACH.md      ← Screen flows, UX logic
+├── designs/screens/       ← UI designs (10 screens)
+├── meetmeat-backend/      ← NestJS API (TODO)
+├── meetmeat-frontend/     ← React Native app (TODO)
+└── archive/               ← Research files (reference only)
+```
 
-- Architecture deep dive (JSI, Fabric, TurboModules vs Impeller, Skia)
-- Performance benchmarks (CPU, Memory, FPS)
-- Build & deployment processes
-- Debugging experience comparison
-- Market demand & salary data
-- Companies using each framework
-- Developer pain points
+## Screens
 
-## Quick Summary
+| # | Screen | Design |
+|---|--------|--------|
+| 1 | Home | `designs/screens/01-home.png` |
+| 2 | Your Details | `designs/screens/02-your-details.png` |
+| 3 | Event Details | `designs/screens/03-event-details.png` |
+| 4 | Loading | `designs/screens/04-loading.png` |
+| 5 | Editor | `designs/screens/05-editor.png` |
+| 6 | Export | `designs/screens/06-export.png` |
+| 7 | History | `designs/screens/07-history.png` |
+| 8 | Profiles | `designs/screens/08-profiles.png` |
+| 9 | Profile Form | `designs/screens/09-profile-form.png` |
+| 10 | Poster Detail | `designs/screens/10-poster-detail.png` |
 
-| Aspect | React Native | Flutter |
-|--------|--------------|---------|
-| Language | JavaScript/TypeScript | Dart |
-| Performance | Good (New Architecture) | Excellent |
-| Job Market | More jobs (5-6x) | Higher salaries (7-20%) |
-| Learning Curve | Easier for JS devs | Easier for complete beginners |
-| Best For | JS teams, web code sharing | Performance, UI consistency |
+## Tech Stack
 
-## Next Steps
+- **Frontend:** React Native + Expo
+- **Backend:** NestJS + TypeORM
+- **Editor:** React Native Skia
+- **AI:** OpenAI / Claude
 
-- [ ] Try sample projects in both frameworks
-- [ ] Build a small app to compare hands-on experience
-- [ ] Make final technology decision
+## Status
+
+- [x] Concept & designs complete
+- [ ] Data models & API
+- [ ] Development
