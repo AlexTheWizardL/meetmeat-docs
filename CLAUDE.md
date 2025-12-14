@@ -80,14 +80,19 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 
 ## Repositories & Git
 
-### Repo URLs
-| Repo | GitHub URL | Local Path |
-|------|------------|------------|
-| meetmeat-docs | https://github.com/AlexTheWizardL/meetmeat-docs | `./` (root) |
-| meetmeat-backend | https://github.com/AlexTheWizardL/meetmeat-backend | `./meetmeat-backend/` |
-| meetmeat-frontend | https://github.com/AlexTheWizardL/meetmeat-frontend | `./meetmeat-frontend/` |
+### Repo Structure
 
-### Git Commands (Claude Reference)
+**3 separate git repos** (NOT submodules):
+
+| Repo | GitHub URL | Local Path | Status |
+|------|------------|------------|--------|
+| meetmeat-docs | https://github.com/AlexTheWizardL/meetmeat-docs | `./` (root) | ✅ Initialized |
+| meetmeat-backend | https://github.com/AlexTheWizardL/meetmeat-backend | `./meetmeat-backend/` | Separate git repo inside docs folder |
+| meetmeat-frontend | https://github.com/AlexTheWizardL/meetmeat-frontend | `./meetmeat-frontend/` | Separate git repo inside docs folder |
+
+**Important:** Backend and frontend folders are nested inside docs folder BUT have their own `.git` directories. They are independent repos, not submodules.
+
+### Git Commands
 
 **Docs repo (root):**
 ```bash
@@ -107,7 +112,7 @@ cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research/meetmeat-
 git add . && git commit -m "message" && git push
 ```
 
-### Initialize Backend/Frontend (First Time)
+### First-Time Setup (if .git doesn't exist)
 ```bash
 # Backend
 cd meetmeat-backend
@@ -129,6 +134,12 @@ git remote add origin https://github.com/AlexTheWizardL/meetmeat-frontend.git
 - Native share sheet (not direct API posting)
 - Templates always switchable
 - AI provider swappable via env
+
+## Git Commit Settings
+
+- **Do NOT mention Claude or AI** in commit messages
+- Use standard commit message format: `<type>: <description>`
+- Keep commits atomic and descriptive
 
 ---
 

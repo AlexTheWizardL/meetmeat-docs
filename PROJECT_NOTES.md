@@ -62,8 +62,8 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 - [x] Concept defined
 - [x] UI designed (10 screens)
 - [x] Editor research done
-- [ ] Data models
-- [ ] API endpoints
+- [x] Data models (TECHNICAL_SPEC.md)
+- [x] API endpoints (TECHNICAL_SPEC.md)
 - [ ] Frontend setup
 - [ ] Backend setup
 - [ ] MVP complete
@@ -78,4 +78,4 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 | Facebook | 1200×630 |
 
 ---
-*Last Updated: December 8, 2025*
+*Last Updated: December 14, 2025*

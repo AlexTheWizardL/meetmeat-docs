@@ -1,0 +1,10 @@
+# Nested repos (separate git repos, not submodules)
+meetmeat-backend/
+meetmeat-frontend/
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
