@@ -135,21 +135,31 @@ git remote add origin https://github.com/AlexTheWizardL/meetmeat-frontend.git
 - Templates always switchable
 - AI provider swappable via env
 
-## Git Commit Settings
+## Git Settings
 
-- **Do NOT mention Claude or AI** in commit messages
-- Use standard commit message format: `<type>: <description>`
+**Commit rules:**
+- Do NOT mention Claude or AI in commit messages
+- Use standard format: `<type>: <description>`
 - Keep commits atomic and descriptive
+
+**Git history maintenance:**
+- Maintain clean git history for ALL 3 repos (docs, backend, frontend)
+- Offer to commit changes after significant work sessions
+- Use meaningful commit messages that describe the changes
 
 ---
 
 ## Current Status
 
 - [x] Designs complete (10 screens)
-- [ ] Data models (TECHNICAL_SPEC.md)
-- [ ] API endpoints
-- [ ] Frontend setup
-- [ ] Backend setup
+- [x] Data models (TECHNICAL_SPEC.md)
+- [x] Backend setup (NestJS + TypeORM)
+- [x] API endpoints (Profiles, Events, Templates, Posters)
+- [x] Swappable AI providers (OpenAI, Anthropic)
+- [x] Swappable storage (Local, S3)
+- [x] Docker setup
+- [x] Frontend setup (Expo SDK 54 + Skia + strict ESLint)
+- [ ] Connect frontend to backend API
 
 ---
 

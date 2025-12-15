@@ -64,8 +64,9 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 - [x] Editor research done
 - [x] Data models (TECHNICAL_SPEC.md)
 - [x] API endpoints (TECHNICAL_SPEC.md)
-- [ ] Frontend setup
-- [ ] Backend setup
+- [x] Backend setup (NestJS + TypeORM + 113 tests)
+- [x] Frontend setup (Expo SDK 54 + Skia + strict ESLint)
+- [ ] Connect frontend to backend
 - [ ] MVP complete
 
 ## Export Sizes
@@ -78,4 +79,4 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 | Facebook | 1200×630 |
 
 ---
-*Last Updated: December 14, 2025*
+*Last Updated: December 15, 2025*
