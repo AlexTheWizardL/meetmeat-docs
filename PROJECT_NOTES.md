@@ -8,10 +8,11 @@ App that creates branded conference posters. User selects profile, enters event 
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | React Native + Expo + React Native Web |
-| Editor | React Native Skia (swappable) |
-| Backend | NestJS + TypeORM + PostgreSQL |
-| AI | OpenAI / Claude (swappable) |
+| Frontend | React Native + Expo SDK 54 + React Native Web |
+| Graphics | React Native Skia |
+| Backend | NestJS 11 + TypeORM + PostgreSQL |
+| AI | OpenAI / Anthropic (swappable via env) |
+| Storage | Local / S3 (swappable via env) |
 
 ## Design System
 
@@ -33,41 +34,50 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 | Decision | Rationale |
 |----------|-----------|
 | No auth for MVP | Local storage only, simplify |
-| Swappable AI provider | Env variable switches OpenAI/Claude |
-| Swappable editor | Can swap Skia/Fabric/Polotno |
+| Swappable AI provider | Env variable switches OpenAI/Anthropic |
+| Swappable storage | Env variable switches Local/S3 |
 | Templates always switchable | User can change anytime, edits preserved |
 | Basic editing only | Text/color edits, no drag-drop for MVP |
 | Native share sheet | Not direct API posting |
 
-## MVP Features
-
-**Included:**
-- Profile management (CRUD)
-- Event URL → AI analysis
-- Manual event entry (fallback)
-- 2-3 AI-generated templates
-- Basic editing (text, colors)
-- Export to 4 platforms
-- History with re-edit
-
-**Not in MVP:**
-- Drag & drop
-- Rotation/resize
-- Custom fonts
-- Direct social posting
-- Auth/cloud sync
-
 ## Progress
 
-- [x] Concept defined
+### Completed
+
 - [x] UI designed (10 screens)
-- [x] Editor research done
 - [x] Data models (TECHNICAL_SPEC.md)
-- [x] API endpoints (TECHNICAL_SPEC.md)
-- [x] Backend setup (NestJS + TypeORM + 113 tests)
-- [x] Frontend setup (Expo SDK 54 + Skia + strict ESLint)
-- [ ] Connect frontend to backend
-- [ ] MVP complete
+- [x] Backend API (NestJS + TypeORM)
+- [x] 98 unit tests + 15 e2e tests
+- [x] Swappable AI providers (OpenAI full, Anthropic mock)
+- [x] Swappable storage (Local, S3)
+- [x] Docker setup for PostgreSQL
+- [x] Frontend setup (Expo SDK 54 + Skia)
+- [x] Frontend screens (8/10):
+  - Home screen
+  - Your Details (Step 1)
+  - Event Details (Step 2)
+  - Loading screen
+  - Editor screen
+  - Export screen
+  - Profiles screen
+  - Profile Form modal
+- [x] API client layer (lib/api/)
+- [x] React hooks (useProfiles, usePosters, useEvents, useTemplates)
+- [x] Zustand store for poster creation flow
+
+### Pending (MVP Blockers)
+
+- [ ] History screen (currently placeholder)
+- [ ] Poster Detail screen (not implemented)
+- [ ] Integration testing (frontend ↔ backend)
+
+### Future Enhancements
+
+- [ ] Complete Anthropic provider (currently mock)
+- [ ] Implement GCS storage provider
+- [ ] Real poster image rendering (currently placeholder)
+- [ ] Rate limiting for API
+- [ ] Additional test coverage
 
 ## Export Sizes
 
@@ -79,4 +89,4 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 | Facebook | 1200×630 |
 
 ---
-*Last Updated: December 15, 2025*
+*Last Updated: January 2026*

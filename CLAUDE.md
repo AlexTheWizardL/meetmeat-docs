@@ -1,18 +1,6 @@
 # MeetMeAt - Project Instructions
 
 > This file is automatically read by Claude Code at session start.
-> **No need to paste anything** - Claude Code reads this file automatically when working in this folder.
-
-## User Context
-
-**User:** Web developer, medium React knowledge, learning React Native & mobile development.
-
-**Claude should:**
-- Explain mobile-specific concepts (build process, signing, native modules, etc.)
-- Highlight differences from web development
-- Provide context on "why" not just "how"
-- Point out critical steps that are easy to miss
-- Offer to explain any technical decisions in more detail
 
 ## Project Overview
 
@@ -22,42 +10,37 @@
 
 ## Tech Stack
 
-- **Frontend:** React Native + Expo + React Native Web
+- **Frontend:** React Native + Expo SDK 54 + React Native Web
 - **Editor:** React Native Skia (swappable architecture)
-- **Backend:** NestJS + TypeORM + PostgreSQL
-- **AI:** OpenAI/Claude (swappable via env)
+- **Backend:** NestJS 11 + TypeORM + PostgreSQL
+- **AI:** OpenAI/Anthropic (swappable via env)
+- **Storage:** Local/S3 (swappable via env)
+
+---
+
+## Repository Structure
+
+**3 separate git repos** (NOT submodules):
+
+| Repo | GitHub URL | Local Path |
+|------|------------|------------|
+| meetmeat-docs | github.com/AlexTheWizardL/meetmeat-docs | `./` (root) |
+| meetmeat-backend | github.com/AlexTheWizardL/meetmeat-backend | `./meetmeat-backend/` |
+| meetmeat-frontend | github.com/AlexTheWizardL/meetmeat-frontend | `./meetmeat-frontend/` |
+
+**Important:** Backend and frontend folders are nested inside docs folder BUT have their own `.git` directories. They are independent repos, not submodules.
 
 ---
 
 ## File References
 
-> **Read these files when needed for detailed info:**
-
-| File | Contains | Read When |
-|------|----------|-----------|
-| `PROJECT_NOTES.md` | Tech decisions, MVP scope, progress checklist | Starting work, checking what's done |
-| `UX_UI_APPROACH.md` | Screen flows, state management, UX decisions | Implementing screens, understanding navigation |
-| `designs/screens/XX-name.png` | Visual UI designs | Implementing any screen (see list below) |
-| `archive/canvas-editor-research.md` | Editor library research, Skia examples | Working on poster editor |
-| `archive/DESIGN_PROMPTS.md` | AI prompts for generating UI designs | Creating new screen designs |
-| `archive/RESEARCH.md` | React Native vs Flutter comparison | Reference only |
-
----
-
-## Screen → Design Mapping
-
-| Screen | Design File | Read design before implementing |
-|--------|-------------|--------------------------------|
-| Home | `designs/screens/01-home.png` | Profile selector, URL input, recent posters |
-| Your Details | `designs/screens/02-your-details.png` | Step 1 form |
-| Event Details | `designs/screens/03-event-details.png` | Step 2 form, brand colors |
-| Loading | `designs/screens/04-loading.png` | AI generation animation |
-| Editor | `designs/screens/05-editor.png` | Poster preview, templates, customize |
-| Export | `designs/screens/06-export.png` | Platform selection |
-| History | `designs/screens/07-history.png` | Poster list by month |
-| Profiles | `designs/screens/08-profiles.png` | Saved profiles list |
-| Profile Form | `designs/screens/09-profile-form.png` | Add/edit profile modal |
-| Poster Detail | `designs/screens/10-poster-detail.png` | View + actions |
+| File | Contains |
+|------|----------|
+| `PROJECT_NOTES.md` | Tech decisions, MVP scope, progress checklist |
+| `UX_UI_APPROACH.md` | Screen flows, state management, UX decisions |
+| `TECHNICAL_SPEC.md` | Data models, API specification |
+| `designs/screens/` | UI designs (10 screens) |
+| `archive/` | Research files (editor, framework comparison) |
 
 ---
 
@@ -78,55 +61,6 @@ Corners: 12px (cards), 8px (inputs), 50% (avatars)
 
 ---
 
-## Repositories & Git
-
-### Repo Structure
-
-**3 separate git repos** (NOT submodules):
-
-| Repo | GitHub URL | Local Path | Status |
-|------|------------|------------|--------|
-| meetmeat-docs | https://github.com/AlexTheWizardL/meetmeat-docs | `./` (root) | ✅ Initialized |
-| meetmeat-backend | https://github.com/AlexTheWizardL/meetmeat-backend | `./meetmeat-backend/` | Separate git repo inside docs folder |
-| meetmeat-frontend | https://github.com/AlexTheWizardL/meetmeat-frontend | `./meetmeat-frontend/` | Separate git repo inside docs folder |
-
-**Important:** Backend and frontend folders are nested inside docs folder BUT have their own `.git` directories. They are independent repos, not submodules.
-
-### Git Commands
-
-**Docs repo (root):**
-```bash
-cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research"
-git add . && git commit -m "message" && git push
-```
-
-**Backend repo:**
-```bash
-cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research/meetmeat-backend"
-git add . && git commit -m "message" && git push
-```
-
-**Frontend repo:**
-```bash
-cd "/Users/oleksandrstepanenko/unibrix/mobile apps/mobile-app-research/meetmeat-frontend"
-git add . && git commit -m "message" && git push
-```
-
-### First-Time Setup (if .git doesn't exist)
-```bash
-# Backend
-cd meetmeat-backend
-git init
-git remote add origin https://github.com/AlexTheWizardL/meetmeat-backend.git
-
-# Frontend
-cd meetmeat-frontend
-git init
-git remote add origin https://github.com/AlexTheWizardL/meetmeat-frontend.git
-```
-
----
-
 ## MVP Constraints
 
 - No auth (local storage only)
@@ -135,59 +69,29 @@ git remote add origin https://github.com/AlexTheWizardL/meetmeat-frontend.git
 - Templates always switchable
 - AI provider swappable via env
 
-## Git Settings
-
-**Commit rules:**
-- Do NOT mention Claude or AI in commit messages
-- Use standard format: `<type>: <description>`
-- Keep commits atomic and descriptive
-
-**Git history maintenance:**
-- Maintain clean git history for ALL 3 repos (docs, backend, frontend)
-- Offer to commit changes after significant work sessions
-- Use meaningful commit messages that describe the changes
-
 ---
 
 ## Current Status
 
-- [x] Designs complete (10 screens)
-- [x] Data models (TECHNICAL_SPEC.md)
-- [x] Backend setup (NestJS + TypeORM)
-- [x] API endpoints (Profiles, Events, Templates, Posters)
-- [x] Swappable AI providers (OpenAI, Anthropic)
-- [x] Swappable storage (Local, S3)
-- [x] Docker setup
-- [x] Frontend setup (Expo SDK 54 + Skia + strict ESLint)
-- [ ] Connect frontend to backend API
+**Completed:**
+- [x] UI designs (10 screens)
+- [x] Data models & API spec (TECHNICAL_SPEC.md)
+- [x] Backend API (NestJS + 98 unit tests + 15 e2e tests)
+- [x] Swappable providers (AI: OpenAI/Anthropic, Storage: Local/S3)
+- [x] Docker setup for PostgreSQL
+- [x] Frontend screens (9/10 implemented)
+- [x] API client layer + React hooks
+- [x] Zustand store for poster creation flow
+
+**Remaining:**
+- [ ] Poster Detail screen (10/10)
+- [ ] Integration testing (frontend ↔ backend)
+- [ ] MVP release
 
 ---
 
-## Repetitive Tasks (Claude Should Handle)
+## Git Commit Rules
 
-### After Making Changes
-1. Update `PROJECT_NOTES.md` progress section if milestone completed
-2. Update this file's "Current Status" if major progress
-
-### After Significant Work Session
-Offer to commit:
-```bash
-git add .
-git commit -m "Description of changes"
-git push
-```
-
-### When Implementing a Screen
-1. Read the design PNG first: `designs/screens/XX-name.png`
-2. Reference `UX_UI_APPROACH.md` for interactions/state
-3. Use design system colors/spacing from this file
-
-### When Creating New Files
-- Frontend components: `meetmeat-frontend/src/`
-- Backend modules: `meetmeat-backend/src/`
-- New docs: root folder, update README.md
-
-### When User Asks "What's Next?"
-1. Check `PROJECT_NOTES.md` progress section
-2. Suggest next unchecked item
-3. Read relevant reference files before starting
+- Use standard format: `<type>: <description>`
+- Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`
+- Keep commits atomic and descriptive
